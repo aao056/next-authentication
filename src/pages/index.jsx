@@ -1,5 +1,6 @@
 import getCookie from '@/utils/getCookie'
 import getAbsolutePath from '@/utils/getAbsolutePath'
+import axios from 'axios'
 
 export async function getServerSideProps(context) {
   const { req } = context;
@@ -27,12 +28,10 @@ export async function getServerSideProps(context) {
       },
     };
   }
-  else {
-    return {
-      redirect: {
-        destination: "/sign-in",
-        permanent: false,
-      }
+  return {
+    redirect: {
+      destination: "/sign-in",
+      permanent: false,
     }
   }
 }
